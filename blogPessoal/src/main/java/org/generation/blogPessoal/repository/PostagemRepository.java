@@ -11,7 +11,4 @@ public interface PostagemRepository extends JpaRepository<Postagem, Long> {
 	
 	public List<Postagem> findAllByTituloContainingIgnoreCase(String titulo); //BUSCA TODO QUE CONTÉM EM TÍTULO //IGNORANDO MAIUSCULAS E MINUSCULAS OU SEJA PATRONIZANDO TUDO PARA MINUSCULAS
 
-	
-	
-
 }
