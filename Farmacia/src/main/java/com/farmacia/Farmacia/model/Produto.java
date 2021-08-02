@@ -1,4 +1,4 @@
-package com.minhaLojaDeGames.LojaDeGames.model;
+package com.farmacia.Farmacia.model;
 
 import java.util.List;
 
@@ -55,3 +55,6 @@ public class Produto {
 	}
 	
 }
+
+
+

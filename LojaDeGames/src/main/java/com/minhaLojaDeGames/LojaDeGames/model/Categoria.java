@@ -34,7 +34,7 @@ public class Categoria {
 		private Produto produto;
 		
 		
-		public long getId() {
+		public long getId() { 
 			return id;
 		}
 
