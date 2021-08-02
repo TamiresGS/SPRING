@@ -4,15 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@Entity
+@Table(name = "Categoria")
 public class Categoria {
-	@Entity
-	@Table(name = "Categoria")
-	public class Postagem {
+
 
 		@Id // INORMANDO QUE É O ID
 		@GeneratedValue(strategy = GenerationType.IDENTITY) // USADO JUNTO COM ID //IDENTITY É AUTO INCRMENT// PRIMARY KEY
@@ -26,6 +28,12 @@ public class Categoria {
 		@Size(min = 10, max = 100) // PARAMETROS DE QUANTIDADE CARACTER
 		private String descricao;
 
+	
+		@ManyToOne           //INTERACAO COM TABELAS
+		@JsonIgnoreProperties("Categoria")
+		private Produto produto;
+		
+		
 		public long getId() {
 			return id;
 		}
@@ -49,28 +57,13 @@ public class Categoria {
 		public void setDescricao(String descricao) {
 			this.descricao = descricao;
 		}
-		
-		
 
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		public Produto getProduto() {
+			return produto;
+		}
 
-
-	}
-
+		public void setProduto(Produto produto) {
+			this.produto = produto;
+		}
+				
 }

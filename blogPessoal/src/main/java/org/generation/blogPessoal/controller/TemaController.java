@@ -2,7 +2,7 @@ package org.generation.blogPessoal.controller;
 
 import java.util.List;
 
-import org.generation.blogPessoal.model.Postagem;
+
 import org.generation.blogPessoal.model.Tema;
 import org.generation.blogPessoal.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class TemaController {
 
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Tema>> getByName(@PathVariable String nome) {
-		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoresCase(nome));
+		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
 
 	@PostMapping
