@@ -1,4 +1,4 @@
-package org.generation.blogPessoal.seguranca;
+package com.farmacia.Farmacia.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +18,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserDetailsService userDateilsService;
 	
-	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDateilsService);
 	}
@@ -30,7 +29,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Override
-	protected void configure (HttpSecurity http)  throws Exception{
+	protected void configure(HttpSecurity http)  throws Exception {
 		http.authorizeRequests()
 			.antMatchers(HttpMethod.POST,"/usuarios/logar").permitAll()
 			.antMatchers(HttpMethod.POST, "/usuarios/cadastrar").permitAll()
@@ -40,6 +39,4 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().cors()
 			.and().csrf().disable();
 	}
-	
-	
 }

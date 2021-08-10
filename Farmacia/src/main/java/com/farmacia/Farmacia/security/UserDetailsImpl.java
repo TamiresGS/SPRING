@@ -1,11 +1,12 @@
-package org.generation.blogPessoal.seguranca;
+package com.farmacia.Farmacia.security;
 
 import java.util.Collection;
 import java.util.List;
 
-import org.generation.blogPessoal.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.farmacia.Farmacia.model.Usuario;
 
 public class UserDetailsImpl implements UserDetails {
 
@@ -70,3 +71,5 @@ public class UserDetailsImpl implements UserDetails {
 	
 	
 }
+
+
